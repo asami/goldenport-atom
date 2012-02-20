@@ -2,7 +2,7 @@ organization := "org.goldenport"
 
 name := "goldenport-atom"
 
-version := "0.1.0-SNAPSHOT"
+version := "0.1.0"
 
 scalaVersion := "2.9.1"
 
@@ -13,6 +13,8 @@ scalacOptions += "-unchecked"
 resolvers += "Asami Maven Repository" at "http://www.asamioffice.com/maven"
 
 libraryDependencies += "org.scalaz" %% "scalaz-core" % "6.0.3"
+
+libraryDependencies += "org.goldenport" %% "goldenport-scala-lib" % "0.1.2"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "1.6.1" % "test"
 
