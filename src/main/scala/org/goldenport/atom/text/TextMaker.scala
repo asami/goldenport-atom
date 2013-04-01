@@ -17,7 +17,7 @@ abstract class TextMaker {
 
   def append(aTemplate: CharSequence, theReplaces: Map[String, String]): MAKER = {
     var text = aTemplate
-    for ((regex, target) <- theReplaces.elements) {
+    for ((regex, target) <- theReplaces) {
       text = regex.r.replaceAllIn(text, target)
     }
     append(text)
