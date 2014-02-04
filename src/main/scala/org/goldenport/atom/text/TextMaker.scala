@@ -4,7 +4,8 @@ import java.io.Flushable
 
 /*
  * @since   May.  5, 2009
- * @version Jul.  5, 2009
+ *  version Jul.  5, 2009
+ * @version Feb.  4, 2014
  * @author  ASAMI, Tomoharu
  */
 abstract class TextMaker {
@@ -17,7 +18,7 @@ abstract class TextMaker {
 
   def append(aTemplate: CharSequence, theReplaces: Map[String, String]): MAKER = {
     var text = aTemplate
-    for ((regex, target) <- theReplaces.elements) {
+    for ((regex, target) <- theReplaces.toSeq) {
       text = regex.r.replaceAllIn(text, target)
     }
     append(text)

@@ -2,6 +2,7 @@ package org.goldenport.atom
 
 import scala.xml.{Elem, Node, XML}
 import scala.collection.mutable.ArrayBuffer
+import scala.util.control.NonFatal
 import java.net.URI
 import java.util.Date
 import java.io.InputStream
@@ -11,7 +12,8 @@ import org.goldenport.util._
 /*
  * @since   May.  4, 2009
  *  version Oct.  6, 2010
- * @version Feb. 14, 2012
+ *  version Feb. 14, 2012
+ * @version Feb.  4, 2014
  * @author  ASAMI, Tomoharu
  */
 class AtomFeed(
@@ -128,7 +130,7 @@ object AtomFeed {
     try {
      Some(unmarshall(XML.loadString(string)))
     } catch {
-      case _ => None
+      case NonFatal(_) => None
     }
   }
 
@@ -136,7 +138,7 @@ object AtomFeed {
     try {
       Some(unmarshall(xml))
     } catch {
-      case _ => None
+      case NonFatal(_) => None
     }
   }
 }
