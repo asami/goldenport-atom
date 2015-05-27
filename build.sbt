@@ -2,28 +2,21 @@ organization := "org.goldenport"
 
 name := "goldenport-atom"
 
-version := "1.0.1"
+version := "2.0.0"
 
-scalaVersion := "2.10.3"
-// crossScalaVersions := Seq("2.9.2", "2.9.1")
+scalaVersion := "2.11.6"
+
+crossScalaVersions := Seq("2.11.6", "2.10.5")
 
 scalacOptions += "-deprecation"
 
 scalacOptions += "-unchecked"
 
+incOptions := incOptions.value.withNameHashing(true)
+
 resolvers += "Asami Maven Repository" at "http://www.asamioffice.com/maven"
 
-// libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.0.6"
-
-libraryDependencies += "org.goldenport" %% "goldenport-scala-lib" % "1.0.1"
-
-libraryDependencies += "org.scalatest" %% "scalatest" % "2.0" % "test"
-
-libraryDependencies += "junit" % "junit" % "4.8" % "test"
-
-// libraryDependencies += "org.goldenport" %% "goldenport-scalatest-lib" % "1.0.1" % "test"
-
-// libraryDependencies += "com.googlecode.json-simple" % "json-simple" % "1.1"
+libraryDependencies += "org.goldenport" %% "goldenport-scala-lib" % "2.0.0"
 
 //
 publishTo := Some(Resolver.file("asamioffice", file("target/maven-repository")))
